@@ -5,7 +5,9 @@
   const isMobalytics = location.hostname === 'mobalytics.gg' || location.hostname.endsWith('.mobalytics.gg');
   const isGgAnimes = location.hostname === 'gg-animes.com' || location.hostname.endsWith('.gg-animes.com');
   const ggAnimes = '.container_ads, .header-bnn, .floating_content, [id^="ads_"], #block-8';
-  const selectors = generic + (isMobalytics ? ', ' + mobalytics : '') + (isGgAnimes ? ', ' + ggAnimes : '');
+  const isDoujinTh = location.hostname === 'doujin-th.com' || location.hostname.endsWith('.doujin-th.com');
+  const doujinTh = 'iframe[src^="//doujin-th.com/banner/"], iframe[src^="https://doujin-th.com/banner/"], iframe[src^="http://doujin-th.com/banner/"], iframe[src^="/banner/"], ins[data-zoneid][class^="eas"], div:has(> iframe[src*="doujin-th.com/banner/"]), div:has(> iframe[src^="/banner/"])';
+  const selectors = generic + (isMobalytics ? ', ' + mobalytics : '') + (isGgAnimes ? ', ' + ggAnimes : '') + (isDoujinTh ? ', ' + doujinTh : '');
   const style = document.createElement('style');
   style.id = 'clearads-cosmetic-style';
   style.textContent = `${selectors} { display: none !important; }`;

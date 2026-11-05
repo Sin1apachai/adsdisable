@@ -1252,5 +1252,68 @@
       ],
       "urlFilter": "||ad-delivery.net^"
     }
+  },
+  {
+    "action": {
+      "type": "block"
+    },
+    "priority": 1,
+    "condition": {
+      "initiatorDomains": [
+        "doujin-th.com"
+      ],
+      "urlFilter": "||doujin-th.com/banner/",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "image",
+        "xmlhttprequest"
+      ]
+    },
+    "id": 59
+  },
+  {
+    "action": {
+      "type": "block"
+    },
+    "priority": 1,
+    "condition": {
+      "initiatorDomains": [
+        "doujin-th.com"
+      ],
+      "urlFilter": "||magsrv.com^",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "image",
+        "xmlhttprequest",
+        "media",
+        "ping",
+        "other"
+      ]
+    },
+    "id": 60
+  },
+  {
+    "action": {
+      "type": "block"
+    },
+    "priority": 1,
+    "condition": {
+      "initiatorDomains": [
+        "doujin-th.com"
+      ],
+      "urlFilter": "||pemsrv.com^",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "image",
+        "xmlhttprequest",
+        "media",
+        "ping",
+        "other"
+      ]
+    },
+    "id": 61
   }
 ]
