@@ -21,6 +21,12 @@ async function test(host, initial) {
   const other = await test('example.com', { enabled: true, excluded: [] });
   assert(!other.style.textContent.includes('.container_ads'));
   assert(!other.style.textContent.includes('doujin-th.com/banner/'));
+  assert(!other.style.textContent.includes('.dac-section--banner'));
+  const additional = await test('xn--l3ca4b6dsc1b.com', { enabled: true, excluded: [] });
+  for (const selector of ['.dac-section--banner', '.dac-section--float', '.video-player-banners-left', '.video-player-banners-right', '#ad-bnr-bottom']) assert(additional.style.textContent.includes(selector));
+  assert(additional.style.isConnected);
+  additional.changes({ excluded: { newValue: ['xn--l3ca4b6dsc1b.com'] } }, 'local');
+  assert(!additional.style.isConnected);
   const doujin = await test('doujin-th.com', { enabled: true, excluded: [] });
   assert(doujin.style.textContent.includes('doujin-th.com/banner/'));
   assert(doujin.style.textContent.includes('ins[data-zoneid][class^="eas"]'));
