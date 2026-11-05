@@ -1,0 +1,11 @@
+{
+  "name": "clearads",
+  "version": "1.3.0",
+  "private": true,
+  "description": "Chrome Manifest V3 ad blocker with Thai controls and site-specific cosmetic filtering",
+  "scripts": {
+    "check": "node --check background.js && node --check content.js && node --check popup.js",
+    "test": "node tests/background.test.cjs && node tests/content.test.cjs && node tests/shadow.test.cjs"
+  },
+  "engines": { "node": ">=22" }
+}

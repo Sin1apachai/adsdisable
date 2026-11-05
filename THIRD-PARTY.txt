@@ -1,0 +1,8 @@
+Mobalytics cosmetic selectors .m-17psdf9, .m-1hsuptt, .m-bz6vl
+Source: EasyList, The EasyList Authors
+https://github.com/easylist/easylist
+https://raw.githubusercontent.com/easylist/easylist/master/easylist/easylist_specific_hide.txt
+Used under Creative Commons Attribution-ShareAlike 3.0:
+https://creativecommons.org/licenses/by-sa/3.0/
+These selectors and adaptations are provided under the same license.
+Other site-specific attribute selectors were added by ClearAds.
