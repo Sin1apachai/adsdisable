@@ -1315,5 +1315,42 @@
       ]
     },
     "id": 61
+  },
+  {
+    "id": 62,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "||ads.p2p-cdnmovie.xyz^",
+      "resourceTypes": [
+        "image",
+        "media",
+        "xmlhttprequest",
+        "sub_frame",
+        "script",
+        "other"
+      ],
+      "initiatorDomains": [
+        "2499hdonline.com"
+      ]
+    }
+  },
+  {
+    "id": 63,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "||2499hdonline.com/wp-content/plugins/movie-ads-ultimate-v9/",
+      "resourceTypes": [
+        "script"
+      ],
+      "initiatorDomains": [
+        "2499hdonline.com"
+      ]
+    }
   }
 ]

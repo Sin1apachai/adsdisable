@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "X Ads — ปิดโฆษณา",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "description": "บล็อกแหล่งโฆษณาทั่วไป พร้อมยกเว้นเว็บไซต์และเปิด–ปิดได้ ไม่มีการส่งข้อมูลออก",
   "permissions": ["declarativeNetRequest", "storage", "activeTab"],
   "background": { "service_worker": "background.js" },
@@ -11,6 +11,7 @@
   "content_scripts": [
     { "matches": ["http://*/*", "https://*/*"], "js": ["content.js"], "run_at": "document_start" },
     { "matches": ["https://lumierecore.com/*"], "js": ["player-policy.js"], "world": "MAIN", "all_frames": true, "run_at": "document_start" },
-    { "matches": ["https://lumierecore.com/*"], "js": ["player-ads.js"], "all_frames": true, "run_at": "document_start" }
+    { "matches": ["https://lumierecore.com/*"], "js": ["player-ads.js"], "all_frames": true, "run_at": "document_start" },
+    { "matches": ["https://2499hdonline.com/play/vid.php*"], "js": ["movie-player-ads.js"], "all_frames": true, "run_at": "document_start" }
   ]
 }

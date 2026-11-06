@@ -1,11 +1,11 @@
 {
   "name": "x-ads",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "private": true,
   "description": "Chrome Manifest V3 ad blocker with Thai controls and site-specific cosmetic filtering",
   "scripts": {
-    "check": "node --check background.js && node --check content.js && node --check popup.js && node --check player-ads.js && node --check player-policy.js",
-    "test": "node tests/background.test.cjs && node tests/content.test.cjs && node tests/shadow.test.cjs && node tests/rules.test.cjs && node tests/player.test.cjs && node tests/player-policy.test.cjs"
+    "check": "node --check background.js && node --check content.js && node --check popup.js && node --check player-ads.js && node --check player-policy.js && node --check movie-player-ads.js",
+    "test": "node tests/background.test.cjs && node tests/content.test.cjs && node tests/shadow.test.cjs && node tests/rules.test.cjs && node tests/player.test.cjs && node tests/player-policy.test.cjs && node tests/movie-player.test.cjs"
   },
   "engines": { "node": ">=22" }
 }

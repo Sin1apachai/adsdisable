@@ -22,6 +22,11 @@ async function test(host, initial) {
   assert(!other.style.textContent.includes('.container_ads'));
   assert(!other.style.textContent.includes('doujin-th.com/banner/'));
   assert(!other.style.textContent.includes('.dac-section--banner'));
+  assert(!other.style.textContent.includes('#mau-player-overlay'));
+  const movie = await test('2499hdonline.com', { enabled: true, excluded: [] });
+  for (const selector of ['.ad-mobile-stack', '.ad-item', '#mau-global-ads-wrap', '#mau-player-overlay']) assert(movie.style.textContent.includes(selector));
+  movie.changes({ excluded: { newValue: ['2499hdonline.com'] } }, 'local');
+  assert(!movie.style.isConnected);
   const additional = await test('xn--l3ca4b6dsc1b.com', { enabled: true, excluded: [] });
   for (const selector of ['.dac-section--banner', '.dac-section--float', '.video-player-banners-left', '.video-player-banners-right', '#ad-bnr-bottom']) assert(additional.style.textContent.includes(selector));
   assert(additional.style.isConnected);
