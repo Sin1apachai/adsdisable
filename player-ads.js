@@ -15,11 +15,15 @@
     if (active && !style.isConnected && document.documentElement) document.documentElement.append(style);
     if (!active) style.remove();
   }
-  function skipWhenAvailable() {
+  function skipPreroll() {
     if (!active) return;
     const button = document.getElementById('skip_btn');
-    // Preserve the player's own countdown and playback sequence.
-    if (button && !button.disabled && button.getClientRects().length && getComputedStyle(button).visibility !== 'hidden') button.click();
+    // Use the player's own skip handler so it also stops the ad and advances
+    // its playlist; hiding its video alone would leave playback running.
+    if (button && button.getClientRects().length && getComputedStyle(button).visibility !== 'hidden') {
+      button.disabled = false;
+      button.click();
+    }
   }
   chrome.storage.local.get(state).then(value => { state = value; apply(); });
   chrome.storage.onChanged.addListener((changes, area) => {
@@ -28,5 +32,5 @@
     apply();
   });
   document.addEventListener('DOMContentLoaded', apply, { once: true });
-  setInterval(() => { apply(); skipWhenAvailable(); }, 1000);
+  setInterval(() => { apply(); skipPreroll(); }, 100);
 })();

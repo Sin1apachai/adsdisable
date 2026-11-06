@@ -17,12 +17,14 @@ async function run(parent, excluded = []) {
 (async () => {
   const test = await run('https://xn--l3ca4b6dsc1b.com');
   assert(test.style.isConnected);
-  test.tick(); assert.equal(test.clicks(), 0);
-  test.button.disabled = false; test.tick(); assert.equal(test.clicks(), 1);
+  test.tick(); assert.equal(test.clicks(), 1);
+  assert.equal(test.button.disabled, false);
+  test.button.getClientRects = () => [];
+  test.tick(); assert.equal(test.clicks(), 1);
   test.changes({ enabled: { newValue: false } }, 'local');
   test.tick(); assert(!test.style.isConnected); assert.equal(test.clicks(), 1);
   const exempt = await run('https://xn--l3ca4b6dsc1b.com', ['xn--l3ca4b6dsc1b.com']);
   assert(!exempt.style.isConnected);
   const other = await run('https://example.com'); assert.equal(other.tick, undefined);
-  console.log('PASS: embedded overlay, parent exclusion, disabled skip countdown, unrelated embeds');
+  console.log('PASS: embedded overlay, parent exclusion, immediate preroll skip, hidden button ignored, unrelated embeds');
 })().catch(error => { console.error(error); process.exitCode = 1; });
