@@ -1,6 +1,6 @@
 {
   "name": "x-ads",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "private": true,
   "description": "Chrome Manifest V3 ad blocker with Thai controls and site-specific cosmetic filtering",
   "scripts": {

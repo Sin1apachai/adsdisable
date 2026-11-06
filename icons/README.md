@@ -1,6 +1,10 @@
 # X Ads icon
 
-Created using the built-in OpenAI image generation tool, then downscaled to 16, 32, 48, 128 and 256 pixel PNG files. The final asset uses an opaque white background around a red rounded tile, a white X and a small browser badge. Icon source is generated artwork; these assets are not from EasyList.
+Created using the built-in OpenAI image generation tool, then downscaled to 16, 32, 48, 128 and 256 pixel PNG files. The current asset is a red X and browser badge with an alpha-transparent background and no tile. Icon source is generated artwork; these assets are not from EasyList.
+
+Transparent revision prompt:
+
+> Edit target: this X Ads icon. Create a genuine transparent-background standalone logo with NO square tile and NO background at all. Remove both the entire red rounded-square tile and the outside white canvas. Preserve the exact shape and relative placement of the large rounded X and the small browser-window symbol at its top right, but recolor the X and the browser symbol scarlet red #E53935 so the mark is clearly visible on white browser toolbars. The small browser's three circles, separator and minus symbol should be transparent negative-space holes. All pixels outside the two red symbols must be alpha transparent, including the space between the diagonal X arms. Flat solid red shapes, clean smooth antialiased edges, no gradients, no shadows, no texture, no tile, no white matte, no checkerboard painted into image. Center composition with small even transparent padding, square PNG.
 
 Generation prompt:
 
