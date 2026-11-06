@@ -12,6 +12,7 @@
   function apply() {
     active = state.enabled && ![location.hostname, ...parentHosts].some(host =>
       state.excluded.some(domain => host === domain || host.endsWith('.' + domain)));
+    document.dispatchEvent(new CustomEvent('clearads-player-policy', { detail: active ? 'enabled' : 'disabled' }));
     if (active && !style.isConnected && document.documentElement) document.documentElement.append(style);
     if (!active) style.remove();
   }

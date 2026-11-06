@@ -6,9 +6,10 @@ async function run(parent, excluded = []) {
   vm.runInNewContext(fs.readFileSync('player-ads.js', 'utf8'), {
     URL, location: { hostname: 'lumierecore.com', ancestorOrigins: [parent] },
     document: { createElement: () => style, documentElement: { append(s) { s.isConnected = true; } },
-      addEventListener() {}, getElementById: () => button },
+      addEventListener() {}, dispatchEvent() {}, getElementById: () => button },
     chrome: { storage: { local: { async get() { return { enabled: true, excluded }; } },
       onChanged: { addListener(fn) { changes = fn; } } } },
+    CustomEvent: class { constructor(type, init) { this.type = type; this.detail = init.detail; } },
     setInterval(fn) { tick = fn; }, getComputedStyle: () => ({ visibility: 'visible' })
   });
   await new Promise(resolve => setImmediate(resolve));
