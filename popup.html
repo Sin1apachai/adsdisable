@@ -1,4 +1,10 @@
 <!doctype html>
-<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ClearAds</title><link rel="stylesheet" href="popup.css"></head>
-<body><header><span class="mark">C</span><div><h1>ClearAds</h1><p>ท่องเว็บสบายตาขึ้น</p></div></header>
-<main><label class="row"><span>บล็อกโฆษณา</span><input id="enabled" type="checkbox" role="switch"></label><section><small>เว็บไซต์ปัจจุบัน</small><p id="host">กำลังโหลด…</p><label class="row"><span>ยกเว้นเว็บไซต์นี้</span><input id="excluded" type="checkbox"></label></section><button id="reload">รีเฟรชหน้านี้</button><p id="status" role="status" aria-live="polite"></p><p id="diagnostics" role="status" style="font-size:12px;line-height:1.8"></p><footer>ทำงานในเครื่อง • ไม่เก็บประวัติการท่องเว็บ<br>อาจบล็อกโฆษณาวิดีโอบางประเภทไม่ได้</footer></main><script src="popup.js"></script></body></html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>X Ads</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header class="brand"><img class="mark" src="icons/icon-128.png" width="44" height="44" alt=""><div><h1><span>X</span> Ads</h1><p>โฆษณาน้อยลง เว็บสบายตาขึ้น</p></div><span class="version" id="version"></span></header>
+<main>
+<section class="protection" aria-label="การบล็อกโฆษณา"><div class="row"><div><p class="eyebrow">AD BLOCKER</p><label class="control-title" for="enabled">บล็อกโฆษณา</label></div><input class="toggle" id="enabled" type="checkbox" role="switch" aria-describedby="protection-label"></div><p class="protection-state" id="protection-label">กำลังตรวจสถานะ…</p></section>
+<section class="site-card" aria-label="เว็บไซต์ปัจจุบัน"><p class="eyebrow">เว็บไซต์ปัจจุบัน</p><p id="host">กำลังโหลด…</p><div class="site-divider"></div><div class="row"><label for="excluded">ยกเว้นเว็บไซต์นี้</label><input class="toggle toggle-small" id="excluded" type="checkbox" role="switch"></div></section>
+<button id="reload"><span aria-hidden="true">↻</span> รีเฟรชหน้านี้</button><p id="status" role="status" aria-live="polite"></p><details class="diagnostic"><summary>รายละเอียดการทำงาน</summary><p id="diagnostics" role="status"></p></details>
+</main><footer><span class="privacy-dot" aria-hidden="true"></span>ทำงานในเครื่อง ไม่เก็บประวัติการท่องเว็บ</footer><script src="popup.js"></script>
+</body></html>

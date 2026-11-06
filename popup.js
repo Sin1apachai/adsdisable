@@ -8,6 +8,9 @@ async function init() {
   document.querySelector('#host').textContent = host || 'หน้านี้ไม่รองรับการบล็อก';
   const state = await chrome.storage.local.get({ enabled: true, excluded: [] });
   enabled.checked = state.enabled;
+  document.body.classList.toggle('is-off', !state.enabled);
+  document.querySelector('#protection-label').textContent = state.enabled ? 'เปิดการบล็อกโฆษณาอยู่' : 'พักการบล็อกโฆษณา';
+  document.querySelector('#version').textContent = 'v' + chrome.runtime.getManifest().version;
   excluded.checked = !!host && state.excluded.some(domain => host === domain || host.endsWith('.' + domain));
   excluded.disabled = !host || (excluded.checked && !state.excluded.includes(host));
   document.querySelector('#reload').disabled = !host;

@@ -1,11 +1,11 @@
-ClearAds — ส่วนขยายบล็อกโฆษณาทั่วไป รุ่น 1.6.0
+X Ads — ส่วนขยายบล็อกโฆษณาทั่วไป รุ่น 1.7.0
 
 วิธีติดตั้ง
 1. เปิด Google Chrome แล้วพิมพ์ chrome://extensions ในแถบที่อยู่
 2. เปิด Developer mode / โหมดนักพัฒนาซอฟต์แวร์ ที่มุมขวาบน
 3. คลิก Load unpacked / โหลดส่วนขยายที่คลายการแพ็ก
 4. เลือกโฟลเดอร์ ClearAds บน Desktop (โฟลเดอร์ที่มี manifest.json)
-5. กดไอคอนจิ๊กซอว์ใน Chrome แล้วปักหมุด ClearAds
+5. กดไอคอนจิ๊กซอว์ใน Chrome แล้วปักหมุด X Ads
 6. รีเฟรชหน้าเว็บที่เปิดอยู่ก่อนติดตั้ง
 
 ใช้งาน
@@ -27,3 +27,5 @@ ClearAds — ส่วนขยายบล็อกโฆษณาทั่ว�
 ไม่ลบโฟลเดอร์นี้ขณะที่ยังใช้งานส่วนขยายอยู่
 
 เอกสาร API: https://developer.chrome.com/docs/extensions/reference/api/declarativeNetRequest/
+
+รุ่น 1.7.0 เปลี่ยนชื่อที่แสดงใน Chrome เป็น X Ads แต่ยังใช้โฟลเดอร์ ClearAds เดิมบน Desktop ได้

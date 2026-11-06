@@ -14,7 +14,7 @@ async function syncRules(state) {
     }))
   });
   await chrome.action.setBadgeText({ text: state.enabled ? 'ON' : 'OFF' });
-  await chrome.action.setBadgeBackgroundColor({ color: state.enabled ? '#087f66' : '#64748b' });
+  await chrome.action.setBadgeBackgroundColor({ color: state.enabled ? '#df302f' : '#9b8c8c' });
 }
 let queue = Promise.resolve();
 function enqueue(task) { const next = queue.then(task); queue = next.catch(() => {}); return next; }
