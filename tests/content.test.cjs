@@ -28,7 +28,7 @@ async function test(host, initial) {
   movie.changes({ excluded: { newValue: ['2499hdonline.com'] } }, 'local');
   assert(!movie.style.isConnected);
   const additional = await test('xn--l3ca4b6dsc1b.com', { enabled: true, excluded: [] });
-  for (const selector of ['.dac-section--banner', '.dac-section--float', '.video-player-banners-left', '.video-player-banners-right', '#ad-bnr-bottom']) assert(additional.style.textContent.includes(selector));
+  for (const selector of ['.dac-section--banner', '.dac-section--float', '.dac-grid[data-dac-slug]', '.dac-float[data-dac-slug]', '.dac-ad', '.video-player-banners-left', '.video-player-banners-right', '#ad-bnr-bottom']) assert(additional.style.textContent.includes(selector));
   assert(additional.style.isConnected);
   additional.changes({ excluded: { newValue: ['xn--l3ca4b6dsc1b.com'] } }, 'local');
   assert(!additional.style.isConnected);

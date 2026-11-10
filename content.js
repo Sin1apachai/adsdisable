@@ -8,7 +8,7 @@
   const isDoujinTh = location.hostname === 'doujin-th.com' || location.hostname.endsWith('.doujin-th.com');
   const doujinTh = 'iframe[src^="//doujin-th.com/banner/"], iframe[src^="https://doujin-th.com/banner/"], iframe[src^="http://doujin-th.com/banner/"], iframe[src^="/banner/"], ins[data-zoneid][class^="eas"], div:has(> iframe[src*="doujin-th.com/banner/"]), div:has(> iframe[src^="/banner/"])';
   const isAdditionalSite = location.hostname === 'xn--l3ca4b6dsc1b.com' || location.hostname.endsWith('.xn--l3ca4b6dsc1b.com');
-  const additionalSite = '.dac-section--banner, .dac-section--float, .video-player-banners-left, .video-player-banners-right, .video-player-banner, .ad-bnr-side, #ad-bnr-bottom';
+  const additionalSite = '.dac-section--banner, .dac-section--float, .dac-grid[data-dac-slug], .dac-float[data-dac-slug], .dac-ad, .video-player-banners-left, .video-player-banners-right, .video-player-banner, .ad-bnr-side, #ad-bnr-bottom';
   const is2499 = location.hostname === '2499hdonline.com' || location.hostname.endsWith('.2499hdonline.com');
   const movieSite = '.ad-mobile-stack, .ad-item, #mau-global-ads-wrap, #mau-player-overlay';
   const selectors = generic + (isMobalytics ? ', ' + mobalytics : '') + (isGgAnimes ? ', ' + ggAnimes : '') + (isDoujinTh ? ', ' + doujinTh : '') + (isAdditionalSite ? ', ' + additionalSite : '') + (is2499 ? ', ' + movieSite : '');

@@ -11,4 +11,12 @@ for (const filter of ['||doujin-th.com/banner/', '||magsrv.com^', '||pemsrv.com^
   assert(!rule.condition.resourceTypes.includes('main_frame'));
 }
 assert(!rules.some(rule => rule.condition.urlFilter === '||doujin-th.com^'));
+for (const filter of ['||storage.adwpress.com/uploads/media/', '||xn--l3ca4b6dsc1b.com/wp-content/plugins/dynamic-ads-client/']) {
+  const rule = rules.find(rule => rule.condition.urlFilter === filter);
+  assert(rule, `Missing updated banner rule ${filter}`);
+  assert.deepEqual(rule.condition.initiatorDomains, ['xn--l3ca4b6dsc1b.com']);
+  assert.equal(rule.action.type, 'block');
+  assert(!rule.condition.resourceTypes.includes('main_frame'));
+  assert(!rule.condition.resourceTypes.includes('media'));
+}
 console.log('PASS: banner and ad-provider rules scoped to doujin-th; main navigation preserved');

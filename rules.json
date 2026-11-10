@@ -1352,5 +1352,37 @@
         "2499hdonline.com"
       ]
     }
+  },
+  {
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "id": 64,
+    "condition": {
+      "initiatorDomains": [
+        "xn--l3ca4b6dsc1b.com"
+      ],
+      "urlFilter": "||storage.adwpress.com/uploads/media/",
+      "resourceTypes": [
+        "image"
+      ]
+    }
+  },
+  {
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "id": 65,
+    "condition": {
+      "initiatorDomains": [
+        "xn--l3ca4b6dsc1b.com"
+      ],
+      "urlFilter": "||xn--l3ca4b6dsc1b.com/wp-content/plugins/dynamic-ads-client/",
+      "resourceTypes": [
+        "script"
+      ]
+    }
   }
 ]
