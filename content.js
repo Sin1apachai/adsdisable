@@ -11,7 +11,9 @@
   const additionalSite = '.dac-section--banner, .dac-section--float, .dac-grid[data-dac-slug], .dac-float[data-dac-slug], .dac-ad, .video-player-banners-left, .video-player-banners-right, .video-player-banner, .ad-bnr-side, #ad-bnr-bottom';
   const is2499 = location.hostname === '2499hdonline.com' || location.hostname.endsWith('.2499hdonline.com');
   const movieSite = '.ad-mobile-stack, .ad-item, #mau-global-ads-wrap, #mau-player-overlay';
-  const selectors = generic + (isMobalytics ? ', ' + mobalytics : '') + (isGgAnimes ? ', ' + ggAnimes : '') + (isDoujinTh ? ', ' + doujinTh : '') + (isAdditionalSite ? ', ' + additionalSite : '') + (is2499 ? ', ' + movieSite : '');
+  const isMiku = location.hostname === 'miku-doujin.com' || location.hostname.endsWith('.miku-doujin.com');
+  const miku = 'center:has(> a > img[src*="miku-doujin.com/pic/"]), center:has(> a > img[src^="/pic/"]), a:has(> img[src*="miku-doujin.com/pic/"]), a:has(> img[src^="/pic/"])';
+  const selectors = generic + (isMobalytics ? ', ' + mobalytics : '') + (isGgAnimes ? ', ' + ggAnimes : '') + (isDoujinTh ? ', ' + doujinTh : '') + (isAdditionalSite ? ', ' + additionalSite : '') + (is2499 ? ', ' + movieSite : '') + (isMiku ? ', ' + miku : '');
   const style = document.createElement('style');
   style.id = 'clearads-cosmetic-style';
   style.textContent = `${selectors} { display: none !important; }`;

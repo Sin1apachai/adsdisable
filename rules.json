@@ -1384,5 +1384,21 @@
         "script"
       ]
     }
+  },
+  {
+    "action": {
+      "type": "block"
+    },
+    "id": 66,
+    "priority": 1,
+    "condition": {
+      "initiatorDomains": [
+        "miku-doujin.com"
+      ],
+      "resourceTypes": [
+        "image"
+      ],
+      "urlFilter": "||miku-doujin.com/pic/"
+    }
   }
 ]

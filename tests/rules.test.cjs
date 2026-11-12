@@ -11,6 +11,12 @@ for (const filter of ['||doujin-th.com/banner/', '||magsrv.com^', '||pemsrv.com^
   assert(!rule.condition.resourceTypes.includes('main_frame'));
 }
 assert(!rules.some(rule => rule.condition.urlFilter === '||doujin-th.com^'));
+const mikuRule = rules.find(rule => rule.condition.urlFilter === '||miku-doujin.com/pic/');
+assert(mikuRule);
+assert.deepEqual(mikuRule.condition.initiatorDomains, ['miku-doujin.com']);
+assert.deepEqual(mikuRule.condition.resourceTypes, ['image']);
+assert.equal(mikuRule.action.type, 'block');
+assert(!rules.some(rule => rule.condition.urlFilter === '||miku-doujin.com^'));
 for (const filter of ['||storage.adwpress.com/uploads/media/', '||xn--l3ca4b6dsc1b.com/wp-content/plugins/dynamic-ads-client/']) {
   const rule = rules.find(rule => rule.condition.urlFilter === filter);
   assert(rule, `Missing updated banner rule ${filter}`);

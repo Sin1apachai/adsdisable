@@ -23,6 +23,12 @@ async function test(host, initial) {
   assert(!other.style.textContent.includes('doujin-th.com/banner/'));
   assert(!other.style.textContent.includes('.dac-section--banner'));
   assert(!other.style.textContent.includes('#mau-player-overlay'));
+  assert(!other.style.textContent.includes('miku-doujin.com/pic/'));
+  const miku = await test('miku-doujin.com', { enabled: true, excluded: [] });
+  assert(miku.style.textContent.includes('center:has(> a > img[src*="miku-doujin.com/pic/"])'));
+  assert(miku.style.isConnected);
+  miku.changes({ excluded: { newValue: ['miku-doujin.com'] } }, 'local');
+  assert(!miku.style.isConnected);
   const movie = await test('2499hdonline.com', { enabled: true, excluded: [] });
   for (const selector of ['.ad-mobile-stack', '.ad-item', '#mau-global-ads-wrap', '#mau-player-overlay']) assert(movie.style.textContent.includes(selector));
   movie.changes({ excluded: { newValue: ['2499hdonline.com'] } }, 'local');
